@@ -9,3 +9,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
 end
+
+group :assets do
+  gem 'coffee-rails'
+end
