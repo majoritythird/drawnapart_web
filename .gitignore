@@ -1,0 +1,14 @@
+# Ignore bundler config
+.bundle
+.rspec
+
+# Ignore all logfiles and tempfiles.
+log
+tmp
+public/assets
+!public/assets/.gitkeep
+
+.DS_Store
+config/database.yml
+public/system
+.sass-cache
