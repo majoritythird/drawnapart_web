@@ -5,6 +5,7 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails'
+gem 'turbolinks'
 
 group :development, :test do
   gem 'rspec'
