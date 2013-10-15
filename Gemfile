@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem 'devise'
 gem 'haml'
+gem 'jquery-rails'
 gem 'pg'
 gem 'rails'
 
