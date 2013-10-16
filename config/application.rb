@@ -25,6 +25,11 @@ module Budgee
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # Use SQL instead of Active Record's schema dumper when creating the database.
+    # This is necessary if your schema can't be completely dumped by the schema dumper,
+    # like if you have constraints or database-specific column types
+    config.active_record.schema_format = :sql
+
     config.generators do |g|
       g.test_framework :rspec, :views => false, :fixture => true
       g.integration_tool :rspec
