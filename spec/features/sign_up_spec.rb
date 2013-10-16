@@ -23,7 +23,7 @@ feature 'Sign up' do
     # Given I am on the sign up page
     visit new_user_registration_path
     # When I fill in and submit the form with bad data
-    # fill_in 'Name', with: 'Jimmy'
+    fill_in 'Name', with: 'Jimmy'
     fill_in 'Email', with: 'jim@example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'wordpass'
@@ -40,7 +40,7 @@ feature 'Sign up' do
     # And I am on the sign up page
     visit new_user_registration_path
     # When I fill in and submit the form with bad data
-    # fill_in 'Name', with: 'Jimmy'
+    fill_in 'Name', with: 'Jimmy'
     fill_in 'Email', with: joe.email
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
@@ -49,6 +49,21 @@ feature 'Sign up' do
     page.should have_text 'Sign up'
     # And I should see an error message
     page.should have_text 'been taken'
+  end
+
+  scenario 'User signs up without a name' do
+    # Given I am on the sign up page
+    visit new_user_registration_path
+    # When I fill in and submit the form with bad data
+    fill_in 'Name', with: ''
+    fill_in 'Email', with: 'joe@example.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    click_button 'Sign up'
+    # Then I should stay on the page
+    page.should have_text 'Sign up'
+    # And I should see an error message
+    page.should have_text "name can't be blank"
   end
 
 end

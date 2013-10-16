@@ -4,4 +4,6 @@ class Person < ActiveRecord::Base
 
   delegate :email, :to => :user
 
+  validates_presence_of :name
+
 end
