@@ -2,7 +2,7 @@ Budgee::Application.routes.draw do
 
   root 'home#index'
 
-  devise_for :users, :only => :registrations
+  devise_for :users, :controllers => {:registrations => 'users/registrations'}, :only => :registrations
 
   devise_scope :user do
     get '/sign_in' => 'devise/sessions#new', :as => 'new_user_session'
