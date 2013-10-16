@@ -14,9 +14,9 @@ Budgee::Application.routes.draw do
     namespace :v1 do
 
       devise_scope :user do
-        post '/sign_in' => 'api/v1/sessions#create', :format => :json
-        post '/sign_out' => 'api/v1/sessions#destroy', :format => :json
-        post '/sign_up' => 'api/v1/registrations#create', :format => :json
+        post '/sign_in' => 'sessions#create', :format => :json
+        post '/sign_out' => 'sessions#destroy', :format => :json
+        post '/sign_up' => 'registrations#create', :format => :json
       end
 
     end
