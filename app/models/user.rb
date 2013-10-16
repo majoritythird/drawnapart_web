@@ -29,9 +29,10 @@ class User < ActiveRecord::Base
         },
         user:
           {
-            id: id,
-            email: email,
+            authentication_token: authentication_token,
             created_at: created_at,
+            email: email,
+            id: id,
             updated_at: updated_at
           }
       }
