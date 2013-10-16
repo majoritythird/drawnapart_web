@@ -9,6 +9,7 @@ gem 'turbolinks'
 
 group :development, :test do
   gem 'factory_girl_rails'
+  gem 'json_expressions'
   gem 'pry-debugger'
   gem 'pry-rails'
   gem 'rspec'
