@@ -16,6 +16,27 @@ class User < ActiveRecord::Base
     end
   end
  
+  def as_json(options = {})
+    {
+      person: 
+        {
+          id: person_id,
+          name: person.name,
+          links:
+            {
+              user: id
+            }
+        },
+        user:
+          {
+            id: id,
+            email: email,
+            created_at: created_at,
+            updated_at: updated_at
+          }
+      }
+  end
+
   private
   
   def generate_authentication_token
