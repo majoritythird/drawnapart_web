@@ -10,16 +10,16 @@ Budgee::Application.routes.draw do
     delete '/sign_out' => 'devise/sessions#destroy', :as => 'destroy_user_session'
   end
 
-  namespace :api do
+  namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
 
       devise_scope :user do
-        post '/sign_in' => 'sessions#create', :format => :json
-        post '/sign_out' => 'sessions#destroy', :format => :json
-        post '/sign_up' => 'registrations#create', :format => :json
+        post '/sign_in' => 'sessions#create'
+        post '/sign_out' => 'sessions#destroy'
+        post '/sign_up' => 'registrations#create'
       end
 
-      get '/people/:id' => 'people#show', :as => 'person', :format => :json 
+      get '/people/:id' => 'people#show', :as => 'person'
 
     end
   end
