@@ -38,7 +38,7 @@ describe 'API Sign up' do
   end
 
   def sign_up(email = 'joe@example.com')
-    jhr(:post, api_v1_sign_up_path, {
+    jhr(:post, api_sign_up_path, {
       user: {
         person_attributes: {
           name: 'Joe'

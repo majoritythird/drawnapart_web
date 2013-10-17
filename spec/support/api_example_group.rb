@@ -19,7 +19,7 @@ module ApiExampleGroup
   private
 
   def api_request(request_method, path, parameters = nil, headers = {})
-    api_accepts_json = {"HTTP_ACCEPT" => "application/json"}
+    api_accepts_json = {"HTTP_ACCEPT" => "application/vnd.budgee.v1+json"}
     send request_method, path, parameters, api_accepts_json.merge(headers)
   end
 end

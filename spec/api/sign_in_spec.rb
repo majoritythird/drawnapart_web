@@ -31,7 +31,7 @@ describe 'API Sign in' do
   end
 
   def sign_in(email = 'joe@example.com')
-    jhr(:post, api_v1_sign_in_path, {
+    jhr(:post, api_sign_in_path, {
       user: {
         email: email,
         password: user.password,

@@ -1,3 +1,5 @@
+require 'api_constraints'
+
 Budgee::Application.routes.draw do
 
   root 'home#index'
@@ -11,7 +13,7 @@ Budgee::Application.routes.draw do
   end
 
   namespace :api, defaults: {format: 'json'} do
-    namespace :v1 do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: true) do
 
       devise_scope :user do
         post '/sign_in' => 'sessions#create'
