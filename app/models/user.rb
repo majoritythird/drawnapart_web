@@ -20,8 +20,10 @@ class User < ActiveRecord::Base
     {
       person: 
         {
+          created_at: person.created_at,
           id: person_id,
           name: person.name,
+          updated_at: person.updated_at,
           links:
             {
               user: id

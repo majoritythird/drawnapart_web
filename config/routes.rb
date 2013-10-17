@@ -19,6 +19,8 @@ Budgee::Application.routes.draw do
         post '/sign_up' => 'registrations#create', :format => :json
       end
 
+      get '/people/:id' => 'people#show', :as => 'person', :format => :json 
+
     end
   end
 
