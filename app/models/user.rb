@@ -19,25 +19,29 @@ class User < ActiveRecord::Base
   def as_json(options = {})
     {
       person: 
+      {
+        created_at: person.created_at,
+        id: person_id,
+        links:
         {
-          created_at: person.created_at,
-          id: person_id,
-          name: person.name,
-          updated_at: person.updated_at,
-          links:
-            {
-              user: id
-            }
+          user: id
         },
-        user:
-          {
-            authentication_token: authentication_token,
-            created_at: created_at,
-            email: email,
-            id: id,
-            updated_at: updated_at
-          }
+        name: person.name,
+        updated_at: person.updated_at
+      },
+      user:
+      {
+        authentication_token: authentication_token,
+        created_at: created_at,
+        email: email,
+        id: id,
+        links:
+        {
+          person: person.id
+        },
+        updated_at: updated_at
       }
+    }
   end
 
   private
