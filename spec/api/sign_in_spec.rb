@@ -28,6 +28,14 @@ describe 'API Sign in' do
       json_response.should match_json_expression({user: {authentication_token: User.last.authentication_token}.ignore_extra_keys!}.ignore_extra_keys!)
     end
 
+    it 'Back-to-back sign-in with different user works' do
+      lou = FactoryGirl.create :user_with_person, email: 'lou@example.com', password: 'password'
+      sign_in user.email
+      json_response.should match_json_expression({user: {authentication_token: user.authentication_token, id: user.id}.ignore_extra_keys!}.ignore_extra_keys!)
+      sign_in lou.email
+      json_response.should match_json_expression({user: {authentication_token: lou.authentication_token, id: lou.id}.ignore_extra_keys!}.ignore_extra_keys!)
+    end
+
   end
 
   def sign_in(email = 'joe@example.com')
