@@ -36,7 +36,8 @@ CREATE TABLE people (
     id integer NOT NULL,
     name character varying(255),
     created_at timestamp without time zone,
-    updated_at timestamp without time zone
+    updated_at timestamp without time zone,
+    balance integer DEFAULT 0
 );
 
 
@@ -172,3 +173,5 @@ INSERT INTO schema_migrations (version) VALUES ('20131015201606');
 INSERT INTO schema_migrations (version) VALUES ('20131015205125');
 
 INSERT INTO schema_migrations (version) VALUES ('20131015232724');
+
+INSERT INTO schema_migrations (version) VALUES ('20131022151357');
