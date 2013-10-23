@@ -15,7 +15,7 @@ describe 'API Sign in' do
 
     it 'Response json contains the person' do
       sign_in
-      json_response.should match_json_expression({person: {name: 'Joe', links: {user: User.last.id}}.ignore_extra_keys!}.ignore_extra_keys!)
+      json_response.should match_json_expression({people: [{name: 'Joe', links: {user: User.last.id}}.ignore_extra_keys!]}.ignore_extra_keys!)
     end
 
     it 'Response json contains the user' do

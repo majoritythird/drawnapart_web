@@ -31,7 +31,7 @@ describe 'API for People' do
 
     it 'Response json contains the user' do
       get_person
-      json_response.should match_json_expression({user: {email: User.last.email}.ignore_extra_keys!}.ignore_extra_keys!)
+      json_response.should match_json_expression({users: [{email: User.last.email}.ignore_extra_keys!]}.ignore_extra_keys!)
     end
 
   end
