@@ -1,14 +1,11 @@
-# Ignore bundler config
 .bundle
-.rspec
-
-# Ignore all logfiles and tempfiles.
+config/database.yml
+.DS_Store
+.gem
 log
-tmp
 public/assets
 !public/assets/.gitkeep
-
-.DS_Store
-config/database.yml
 public/system
+.rspec
 .sass-cache
+tmp
